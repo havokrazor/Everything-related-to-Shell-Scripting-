@@ -16,13 +16,17 @@ For eg - `ls man`
 
 `ls - lrth` - list files and folder with permission and details 
 
-### Creating Files and Folders ###
+### Everything related to Files and Folders ###
 
 `touch` - Can change the permissions and create a file if not already created
 
 `nano` - creating and opening a file to write in
 
 `echo` - printing things in the file
+
+`cat` - Looking at the content of the file
+
+`sh filename` or `./filename` - To execute the file
 
 ## Question someone might ask regarding scripting ##
 
