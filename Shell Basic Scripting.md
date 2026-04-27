@@ -4,6 +4,21 @@ The most useful command in shell is `man` also known as Manual
 
 For eg - `ls man`
 
+### pre requisite of writing a shell script ###
+
+Author : Raza
+Date : 03/27/2026
+
+This scripts execute this and that 
+
+verzion : v1
+
+`set -x` - Enables debug mode in a shell script or terminal session. prints each command (after variable expansion) before executing it. 
+
+`set -e` - exit immediately if any command fails
+
+`set -o` - pipedfail
+
 ### System Checking Commands ###
 
 `nproc` - Check CPUs
@@ -13,6 +28,12 @@ For eg - `ls man`
 `top` - Processing running on the machine , CPU usage , Memory usage 
 
 `df -h` - command displays the amount of available and used disk space on your file systems in a "human-readable" format using gigabytes and megabytes
+
+`ps -ef` - Displays a full list of all running processes on the system.
+           -e shows all process
+           -f shows full format
+           For example - `ps -ef | grep amazon | awk -F"" '{print $2}'`
+
 `trap` - is used to intercept signals and execute specific code when those signals are received by the script.It’s most commonly used for "cleanup" tasks—like deleting               temporary files or killing background processes—if a script crashes or is interrupted.
 
 For example - `trap 'commands' SIGNAL`
