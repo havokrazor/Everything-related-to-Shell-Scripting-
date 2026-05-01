@@ -4,7 +4,7 @@ The most useful command in shell is `man` also known as Manual
 
 For eg - `ls man`
 
-### pre requisite of writing a shell script ###
+### Pre requisite of writing a shell script ###
 
 Author : Raza
 Date : 03/27/2026
@@ -18,6 +18,46 @@ verzion : v1
 `set -e` - exit immediately if any command fails
 
 `set -o` - pipedfail
+
+`crontab` - the command used to schedule tasks to run automatically at specific intervals.
+
+- crontab -e: Edit your crontab file (opens the editor).
+
+- crontab -l: List all scheduled jobs.
+
+- crontab -r: Remove all scheduled jobs.
+
+A cron job follows a five-field format representing time, followed by the command:
+`* * * * * /path/to/command`
+
+|Field|Description|Range|
+|-----|-----------|-----|
+|Minute|Minutes after the hour|0-59|
+|Hour|Hour of the day (24-hr)|0-23|
+|Day|Day of the month|1 - 31|
+|Month|Month of the Year|1-12|
+|Weekday|Day of the Week|0 - 6 (Sun - Sat)|
+
+For example to run a script at Wednesday at 5pm everyday you will use: 
+
+`0 17 * * 3 /path/to/your_script.sh`
+
+To Run the Job you use `crontab -e` and it will launches a text editor inside your terminal.
+You will see a file filled with comments (lines starting with #). These are just instructions. You scroll to the very bottom and add your new line.
+You type your schedule and path on a single line. For example, to run a script every day at midnight:
+`0 0 * * * /home/user/myscript.sh`
+
+**Note** -Since Cron runs in the background, it has no terminal to display messages or errors. Without this, you'd never know if your script failed.
+
+So you can append the output to a file like `>> /home/scripts/cronlog.log 2>&1`
+
+In Linux, there are two main "streams":
+
+- 1 (stdout): Normal messages.
+
+- 2 (stderr): Error messages.
+
+2>&1 tells the system: "Take stream 2 (errors) and send it to the same place as stream 1 (normal output)."
 
 ### System Checking Commands ###
 
@@ -189,6 +229,8 @@ Code management using git
 Configuration management 
 
 **What is a Shebang and executables in shell?**
+
+A Shebang tells the system how to run the file, while making it executable gives the system permission to run it.
 
 **What is the difference between `#!/bin/sh` and `#!/bin/bash`**
 
