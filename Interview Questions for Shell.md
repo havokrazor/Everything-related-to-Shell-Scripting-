@@ -48,5 +48,6 @@
    - vim -r test.txt
 
 9. What is the different between soft and hard link?
-    - 
+    - When a script creates a hard link, it builds an alternate path to the exact same physical sector on your drive. Deleting the "original" script or file does not erase        the data.
+    - Soft links contain only a text path string. If your script deletes or moves the original file, the soft link stays behind but breaks entirely, causing errors like No        such file or directory if accessed later
      
