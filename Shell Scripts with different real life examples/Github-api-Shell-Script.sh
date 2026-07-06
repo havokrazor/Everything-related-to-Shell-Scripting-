@@ -1,4 +1,22 @@
-#!/bin/bash
+#####
+This script helps us know which individual has access to the Github what permission on the Github
+Make sure to change the script access by using chmod command 
+
+and also store your hard credentials such as:
+
+export username=""
+export token=""
+
+You need to create a new key in your github , note that exporting username and tokens does not hard code it.
+So if you get timeout out or your SSH session expires you need to type in the credentails again.
+Ofcourse you can hard code the credentials in the Env file, but it would not make this user-friendly to another person 
+
+Before you execute the script you need to pass on 2 arguments which is following:
+Repo Owner/ Organization name
+
+######
+
+!/bin/bash
 
 # GitHub API URL
 API_URL="https://api.github.com"
